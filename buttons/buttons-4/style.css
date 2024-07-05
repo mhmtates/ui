@@ -14,7 +14,7 @@ body {
 	height: 100vh;
 }
 
-.button-fold {
+.btn-fold {
 	position: relative;
 	border-radius: 0.5rem;
 	background-color: var(--btn-bg);
@@ -28,7 +28,7 @@ body {
 	font-size: 1.5rem;
 }
 
-.button-fold::before {
+.btn-fold::before {
 	position: absolute;
 	content: '';
 	top: 0;
@@ -48,11 +48,11 @@ body {
 	);
 }
 
-.button-fold:hover:before {
+.btn-fold:hover:before {
 	height: 1.5em;
 	width: 1.5em;
 }
 
-.button-fold:active {
+.btn-fold:active {
 	scale: 0.9;
 }
