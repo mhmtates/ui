@@ -1,0 +1,58 @@
+:root {
+	--bg:#fff;
+	--btn-bg: #d43f1e;
+	--glow-size: 1.5rem;
+	
+}
+
+body {
+	background-color: var(--bg);
+	font-family:'Arial', Helvetica, sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.button-fold {
+	position: relative;
+	border-radius: 0.5rem;
+	background-color: var(--btn-bg);
+	padding: 1em 1.5em;
+	color: black;
+	box-shadow: 0.5em 0.5em 0.5em #0000004f;
+	transition-duration: 200ms;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	font-size: 1.5rem;
+}
+
+.button-fold::before {
+	position: absolute;
+	content: '';
+	top: 0;
+	left: 0;
+	height: 0;
+	width: 0;
+	box-shadow: 0.2em 0.2em 0.2em #0000004f;
+
+	border-radius: 0 0 0.5em 0;
+	transition-duration: 200ms;
+	background: linear-gradient(
+		135deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(255, 255, 255, 1)50%,
+		rgb(219, 72, 19) 50%,
+		rgb(219, 72, 19) 60%
+	);
+}
+
+.button-fold:hover:before {
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.button-fold:active {
+	scale: 0.9;
+}

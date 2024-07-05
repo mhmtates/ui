@@ -1,0 +1,90 @@
+:root {
+    --border-radius: 2rem;
+    --bg: #060D23;
+    --btn-bg: #3F396F;
+    --glow-size: 0.5rem;
+}
+
+body {
+    background-color: var(--bg);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-glow {
+    min-width: 10rem;
+    min-height: 3rem;
+    text-decoration: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: relative;
+    z-index: 0;
+    border-radius: var(--border-radius);
+    transition: all 0.5s;
+    gap: 0.5rem;
+}
+
+.btn-glow:before {
+    content: '';
+    background: linear-gradient(to right, #ff8196, #d95151,
+            #5de1ff, #ffc300, #ff8196, #d95151,
+            #5de1ff, #ffc300, #d95151);
+    position: absolute;
+    background-size: 300%;
+    z-index: -1;
+    filter: blur(var(--glow-size));
+    width: calc(100% + var(--glow-size));
+    height: calc(100% + var(--glow-size));
+    opacity: 0;
+    border-radius: var(--border-radius);
+    animation: glow 25s alternate infinite;
+    transition: opacity .5s cubic-bezier(1, 0, 0, 1);
+}
+
+.btn-glow:active {
+    background: var(--btn-bg);
+}
+
+.btn-glow:hover:before {
+    opacity: 1;
+}
+
+.btn-glow:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--btn-bg);
+    left: 0;
+    top: 0;
+    border-radius: var(--border-radius);
+}
+
+@keyframes glow {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
