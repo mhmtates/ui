@@ -1,0 +1,69 @@
+
+
+:root {
+  --background: #2C2C2C;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;  
+}
+
+html {
+  font-family:'Verdana', Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+body {
+  background: var(--background);
+}
+
+.button-01 {
+  color: #fff;
+  cursor: pointer;
+  line-height: 1.5rem;
+  max-width: 200px; 
+  width: 100%; 
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  transition: all 1s ease-in;
+}
+.button-01 .text{
+   margin-top: 15px;
+}
+.button-01:hover {
+  color: #5059ff;
+}
+
+.button-01 svg {
+  height: 50px;
+  width: 100%;
+  left: 0;
+  top: 0; 
+  position: absolute;
+ 
+}
+
+.button-01 rect {      
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 450, 0;
+  transition: all 0.5s linear;
+}
+
+.button-01:hover rect {
+  stroke-width: 5;
+  stroke-dasharray: 20, 300;
+  stroke-dashoffset: 48;
+  stroke: #5059ff;
+  transition: all 2s cubic-bezier(
+      0.22, 1, 0.25, 1
+  );
+}

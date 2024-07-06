@@ -2,7 +2,7 @@
     --bg: #171717;
     --text-color: #2528d4;
     --accent: orange;
-    --animate-duration: 20s;
+   
 }
 
 * {
@@ -47,7 +47,7 @@ body {
     line-height: 2rem;
     letter-spacing: 0.3rem;
     color: var(--text-color);
-    top: -3rem;
+    top: -3.5rem;
     position: relative;
     pointer-events: none;
 }
